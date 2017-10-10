@@ -11,9 +11,6 @@ float qualavg=0;
 int countDown=0;
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(60, LEDPIN, NEO_GRB + NEO_KHZ800);
 
-
-
-
 void setup() {
   // put your setup code here, to run once:
   pinMode(A0, INPUT);
@@ -44,13 +41,16 @@ void loop() {
       Serial.print("  ");
       Serial.println(qualavg);
       if (qualavg > 40) {
+        //blue 0 0 100
         strip.setPixelColor(0, strip.Color(0, 0, 100));
       } else if (qualavg > HUMIDITY) {
+        //green 0 50 0
         strip.setPixelColor(0, strip.Color(0, 50, 0));
       } else if (qualavg > 3.8) {
         //yellow 150 100 0
         strip.setPixelColor(0, strip.Color(150, 100, 0));
       } else {
+        //red 200 0 0 
         strip.setPixelColor(0, strip.Color(200, 0, 0));
       }
       strip.show(); 
