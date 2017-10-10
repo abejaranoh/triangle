@@ -48,6 +48,7 @@ void loop() {
       } else if (qualavg > HUMIDITY) {
         strip.setPixelColor(0, strip.Color(0, 50, 0));
       } else if (qualavg > 3.8) {
+        //yellow 150 100 0
         strip.setPixelColor(0, strip.Color(150, 100, 0));
       } else {
         strip.setPixelColor(0, strip.Color(200, 0, 0));
